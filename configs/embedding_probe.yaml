@@ -1,0 +1,8 @@
+# P2 embedding-initialisation probe (no training): sequence-length reduction
+# and LM quality under different embedding inits for the added Hindi pieces.
+base_ident: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+extended_tokenizer: artifacts/tokenizers/tinyllama-hi8000   # built by `python -m adalat_mt.tokenization.vocab_extend`
+data: data/processed/test.jsonl
+n_sentences: 64          # first N test rows (Hindi side)
+seed: 13
+out: results/tokenization/embedding_init_probe.json

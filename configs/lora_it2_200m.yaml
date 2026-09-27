@@ -1,0 +1,28 @@
+# LoRA adaptation of IndicTrans2-dist-200M: identical recipe to lora_it2_1b.yaml (size ablation).
+base_model: ai4bharat/indictrans2-en-indic-dist-200M
+src_lang: eng_Latn
+tgt_lang: hin_Deva
+data_dir: data/processed
+out_dir: outputs/lora_it2_200m       # relative to the working dir (/content/work on Colab)
+seed: 13
+max_length: 256
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.1
+  target_modules: [q_proj, k_proj, v_proj, out_proj, fc1, fc2]   # encoder + decoder attention and FFN
+train:
+  epochs: 6
+  lr: 3.0e-4
+  batch_size: 4                     # 8 OOMs on the T4 for the 1B model (122k-vocab logits); keep the same recipe for 200M
+  grad_accum: 4                     # effective batch 16
+  warmup_ratio: 0.06
+  weight_decay: 0.01
+  label_smoothing: 0.1
+  max_grad_norm: 1.0
+  fp16: true                        # T4 has no bf16
+  log_every: 20
+eval:
+  num_beams: 4
+  batch_size: 32
+  patience: 2                       # epochs without dev chrF++ improvement before stopping

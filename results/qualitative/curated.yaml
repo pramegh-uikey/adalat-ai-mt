@@ -1,0 +1,160 @@
+intro: |
+  Sixteen test segments picked from `results/qualitative/candidates.jsonl` to cover every qualitative category, with
+  both wins and losses of the adaptation. "Baseline" is IndicTrans2-1B zero-shot; "Adapted" is IndicTrans2-1B + LoRA.
+  Texts and sentence-level chrF++ are pulled from the prediction files by `pair_id`, so they cannot drift from what the
+  systems actually produced. The analyses are my own; corpus-level counts that back the
+  generalisations are cited from `results/eval/error_analysis.json` and the train split.
+examples:
+  - pair_id: 10-0000
+    categories: [archaic/formulaic, legal-term]
+    analysis: |
+      "Leave granted" is Supreme Court shorthand for *special leave to appeal is granted*. The baseline reads "leave" as
+      time off (छुट्टी, "holiday/leave of absence"), a meaning error. The adapter produces the exact formula used in
+      the Hindi judgments (अनुमति प्रदान की गई), which occurs in 10 training pairs. All three "Leave granted" segments
+      in the test set (10-0000, 11-0000, 27-0000) flip from wrong or loose to correct. These are the largest single
+      gains in the test set, but the corpus-level gain survives removing short segments (robustness table in §4).
+  - pair_id: 27-0019
+    categories: [legal-term, long-sentence, citation/section/date]
+    analysis: |
+      A clear domain fix: the baseline renders "the Respondents" as उत्तरदाताओं ("people who answer a survey"). The
+      adapter uses the legal term प्रत्यर्थी, although in the double-plural form प्रत्यर्थीगणों (गण + oblique plural;
+      प्रत्यर्थियों is the correct form; the LLM critic flagged this). It also adopts the reference's date convention (दिनांक 15.04.1974 का
+      नोटिस instead of 15.04.1974 दिनांकित). What it did **not** learn: "service of notice" stays सेवा ("service" as
+      in employment/help) in both systems, whereas legal Hindi and the reference use तामील.
+  - pair_id: 11-0020
+    categories: [legal-term]
+    analysis: |
+      The only change is अपीलार्थी → अपीलकर्ता for "appellant". **Both are correct** Hindi legal terms. The adapter
+      has simply converged on the majority rendering in the training references (अपीलकर्ता in 195 of 279 appellant
+      pairs vs अपीलार्थी in 62), and sentence chrF++ jumps +18.8 for a stylistic change. Part of the corpus-level gain
+      is therefore *house-style matching* rather than better adequacy. That is a real benefit for a court that wants
+      consistent output, but it should not be read as fewer translation errors.
+  - pair_id: 10-0048
+    categories: [legal-term]
+    analysis: |
+      A regression. The baseline correctly uses प्रत्यर्थी for the respondent in an appeal; the adapter switches to
+      प्रतिवादी (the *defendant* in a suit). The adapter learned this ambiguity from the data: of the 128 training pairs
+      mentioning "respondent", 79 use प्रत्यर्थी but 43 use only प्रतिवादी. Fixing it needs cleaner references or
+      terminology-constrained decoding (an appeal-context glossary), not more epochs.
+  - pair_id: 27-0010
+    categories: [legal-term]
+    analysis: |
+      "Maintainable" (whether a suit may be entertained at all) has a fixed legal rendering, पोषणीय, which the
+      reference uses. Both systems produce विचारणीय ("worth considering / triable"), which is close but not the term of
+      art. The adapter additionally drifts from वाद (the legal word for a civil suit) to the colloquial मुकदमा, a small
+      register regression. One adaptation epoch over ~1.1k pairs does not overwrite a strongly preferred rendering.
+  - pair_id: 11-0009
+    categories: [legal-term, named-entity]
+    analysis: |
+      Neither system knows "fire arm" (firearm). The baseline parses it as "fire" + "arm" (हाथ में आग लगने, "his hand
+      caught fire"). The adapter produces the equally literal आग की बांह की चोट ("injury of the arm of fire"); the
+      reference points to the right term but misspells it (आग्रेय आस्त्र for आग्नेयास्त्र) and adds a clause that is
+      not in the source ("उमा शंकर ने दम तोड़ दिया"), so it is not a clean target either. Both systems also inflect the victim Uma Shanker as
+      feminine (गिर गई/गिर गईं), where the reference correctly uses the masculine गिर गया. The adapter did not touch
+      these rare forensic terms or the gender of named persons.
+  - pair_id: 27-0021
+    categories: [long-sentence, omission/hallucination, citation/section/date]
+    analysis: |
+      The long quoted decree (≈ 90 words, many numbers) makes the **baseline degenerate**: it outputs the date followed
+      by a run of dots. The adapter produces a complete, well-structured translation and keeps every figure (19.08.1992,
+      19,561, 6%, premises no. 3, para 9, 60 days). Remaining errors: the Latin *pendente lite* is dropped, "decreed" is
+      weakened to आदेशित ("ordered"; the reference uses डिक्री), "suit plaint" becomes वाद वादी ("suit plaintiff"; the
+      reference uses वादपत्र), and "Rs.19,561/-" keeps Latin "Rs." with a spurious space after the comma.
+  - pair_id: 27-0027
+    categories: [omission/hallucination, archaic/formulaic]
+    analysis: |
+      The mirror image of the previous example: here the **adapter degenerates**. After a correct sentence (it keeps
+      "the said" → उक्त) it appends a long run of dots, apparently triggered by the elision marks "... ..." in the
+      source (a few training references also contain dot runs). The baseline simply drops the elision. Degenerate
+      repetition therefore did not disappear with adaptation; it moved (1 flagged segment for each system in
+      `error_analysis.json`). A decoding-time guard (`no_repeat_ngram_size` or a max-length ratio) would catch both
+      cases cheaply. Both systems again use सेवा instead of तामील for "service" of a notice.
+  - pair_id: 10-0006
+    categories: [long-sentence, omission/hallucination, named-entity]
+    analysis: |
+      Clause attachment breaks in the adapted output: "appointed … Balram and Smt. Geeta Devi, whose father and husband
+      respectively died in harness, as Part Time Tubewell Operators and many other candidates…" becomes "appointed …
+      as Part Time Tubewell Operators and as many other candidates". The clause about the relatives dying in service
+      is **omitted**, and it is the legal basis of the compassionate-appointment claim. The baseline keeps it (though
+      "in harness" loses its "while in service" nuance). The reference is itself wrong here (कई अन्य उम्मीदवारों की मृत्यु
+      हो गई, "many other candidates died"), so chrF++ is a poor judge of this segment.
+  - pair_id: 27-0007
+    categories: [citation/section/date, omission/hallucination]
+    analysis: |
+      The adapter **drops the date** ("framed on 03.11.1978") altogether, a serious omission in a judgment. The baseline
+      keeps it but writes "03.11.1978 पर" (spatial "on"); correct Hindi is "दिनांक 03.11.1978 को". This "<date> पर"
+      pattern appears 7 times in both the baseline and the adapted test output, and never in the references (which use
+      "को" 13 times). My hypothesis: IndicTransToolkit masks dates as `<ID1>` placeholders before translation, so the
+      model chooses the postposition without seeing a date. A one-line post-edit rule would fix it; adaptation did not.
+      Neither system uses the procedural terms of the reference (विवाद्यक विरचित, "issues framed").
+  - pair_id: 27-0014
+    categories: [citation/section/date, legal-term]
+    analysis: |
+      Statute references stress word order. The baseline restructures correctly into Hindi genitive order (टी. पी.
+      अधिनियम, 1882 की धारा 106 … 1972 के यू. पी. अधिनियम की धारा 20 (2) (ए)) but silently drops the Act number
+      "No. 13". The adapter keeps English order (धारा 106 टी. पी. अधिनियम, 1882 …), leaves "No.13" untranslated in
+      Latin script and drops the "of" linking it to 1972, which makes the citation harder to parse (all numbers are kept,
+      so on adequacy it narrowly beats the baseline). The reference expands "T.P. Act" to सम्पत्ति अन्तरण अधिनियम but omits
+      1882 and Section 20(2)(a), so neither system can match it fully.
+  - pair_id: 10-0025
+    categories: [named-entity, citation/section/date, archaic/formulaic]
+    analysis: |
+      Several register wins for the adapter: "learned counsel" → विद्वान अधिवक्ता (legal register) instead of विद्वान वकील
+      (colloquial "lawyer"); present tense matching the source ("gives an explanation", देते हैं); and the reference's
+      citation style "(2007) 2 एससीसी 138" instead of the spelled-out "एस. सी. सी.". One named-entity regression: inside
+      the case title "U.P. Gram Panchayat Adhikari vs Daya Ram Saroj" it expands U.P. to उत्तर प्रदेश, but case titles
+      should be reproduced as cited (the reference keeps यूपी).
+  - pair_id: 11-0023
+    categories: [named-entity]
+    analysis: |
+      The adapter re-orders the clause to the reference's structure (इस पर … आपत्ति जताई), hence +18 chrF++. Both
+      systems transliterate the witness label "PW 1" as पीडब्लू 1, while the reference uses the Hindi abbreviation
+      "प्र. सा. 1". Such abbreviations are rare and inconsistent in the training data, so the adapter did not pick them up.
+  - pair_id: 10-0021
+    categories: [citation/section/date, named-entity]
+    analysis: |
+      **Reference error.** The source says "13 years"; the reference says 43 वर्षों. This is the same legacy-font 1→4
+      digit corruption I had to repair in the OCR'd training documents, here inside an official test reference. Both
+      systems correctly write 13 and are penalised for it. The adapter also changes the honorific उन्हें to the plain उसे
+      for the respondent's deceased father (the reference keeps उन्हें), and both systems use the "<date> पर" pattern
+      discussed in 27-0007.
+  - pair_id: 10-0003
+    categories: [named-entity, legal-term]
+    analysis: |
+      **Source-side noise.** The English "clean" text of this sentence is OCR debris ("impugned CRaneet ee . : aaa
+      respondent was unambiguous…"), while the Hindi reference was translated from the original judgment. Both
+      systems faithfully transliterate the garbage (सी. आर. ए. एन. ई. ई.). No MT adaptation helps here; the fix is
+      source-side OCR checking (e.g. flagging tokens outside an English vocabulary before translation). The adapter
+      does get "impugned" right (आक्षेपित, the legal term) where the baseline has विवादित ("disputed"). The reference
+      says the selection process was अस्पष्ट ("unclear"), while the garbled English says "unambiguous"; I cannot tell
+      which is right without the original PDF.
+  - pair_id: 27-0003
+    categories: [legal-term, archaic/formulaic]
+    analysis: |
+      "This notice was admittedly received": the baseline's स्वीकार की गई थी means "was *accepted*", which changes a
+      finding about receipt into one about acceptance, a legally material error. The adapter keeps the meaning
+      "received" (प्राप्त हुआ) and matches the reference's नोटिस, but renders the formulaic "admittedly" (= undisputedly)
+      as स्वीकार्य रूप से ("acceptably"; स्वीकृत रूप से would be closer). The reference (निःसन्देह रूप से … की गयी था) is
+      itself loose and ungrammatical.
+critic_summary: |
+  An LLM reviewer (prompted as an English–Hindi legal translator) reviewed the 16 examples
+  **blind to my analyses** (it read `curated_examples.jsonl` first and `examples.md` only afterwards). Its
+  verdicts on these hand-picked items, which were chosen to include adaptation losses, so they say nothing about the
+  overall rate: adapted better in 7, baseline better in 6, ties in 3.
+
+  Its cross-cutting points:
+  1. **Fixed:** high-frequency formulas and party labels ("अनुमति प्रदान की गई", उत्तरदाताओं → प्रत्यर्थी, वकील → अधिवक्ता,
+     विवादित → आक्षेपित, "दिनांक … का", "एससीसी"), plus one important adequacy fix ("accepted" → "received", 27-0003).
+  2. **Broke:** consistency and honorifics (प्रत्यर्थी → प्रतिवादी, the double plural प्रत्यर्थीगणों, उन्हें → उसे, वाद → मुकदमा),
+     learned from inconsistent references; and structure in long sentences (a dropped date and a dropped clause,
+     English order in statute citations).
+  3. **Untouched:** सेवा for तामील, मुद्दे/दलीलें for विवाद्यक/अभिवचन, विचारणीय for पोषणीय, "<date> पर", the visarga "ः" used
+     as a colon, पीडब्लू, "firearm", the victim's gender. Dot-run degeneration appears in both systems, pointing to
+     a decoding guard rather than more adaptation.
+  4. **Reference quality:** it judged 9 of the 16 references loose or wrong, two of them meaning-changing
+     ("43 वर्षों"; an invented death clause), which limits any reference-based score on this test set.
+
+  Where it disagreed with me, the analyses above were corrected (double plural in 27-0019; reference
+  problems in 11-0009, 10-0003, 27-0003; the exact loss in 27-0014).
+
+  *This is LLM judgement on 16 hand-picked items, not a metric.*

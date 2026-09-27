@@ -1,0 +1,8 @@
+# Colab T4 extras (torch is preinstalled there)
+transformers==4.47.1
+peft
+torchao>=0.16.0     # Colab preinstalls 0.10.0; peft's LoRA dispatch requires >=0.16.0 or it raises ImportError
+sentencepiece
+IndicTransToolkit
+sacrebleu
+pyyaml

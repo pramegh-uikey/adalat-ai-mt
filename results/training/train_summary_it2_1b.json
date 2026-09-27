@@ -1,0 +1,79 @@
+{
+  "config": {
+    "base_model": "ai4bharat/indictrans2-en-indic-1B",
+    "src_lang": "eng_Latn",
+    "tgt_lang": "hin_Deva",
+    "data_dir": "data/processed",
+    "out_dir": "outputs/lora_it2_1b",
+    "seed": 13,
+    "max_length": 256,
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.1,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "out_proj",
+        "fc1",
+        "fc2"
+      ]
+    },
+    "train": {
+      "epochs": 6,
+      "lr": 0.0003,
+      "batch_size": 4,
+      "grad_accum": 4,
+      "warmup_ratio": 0.06,
+      "weight_decay": 0.01,
+      "label_smoothing": 0.1,
+      "max_grad_norm": 1.0,
+      "fp16": true,
+      "log_every": 20
+    },
+    "eval": {
+      "num_beams": 4,
+      "batch_size": 32,
+      "patience": 2
+    }
+  },
+  "trainable_params": 17694720,
+  "total_params": 1133238272,
+  "best_epoch": 1,
+  "best_dev_chrf": 64.61,
+  "history": [
+    {
+      "epoch": 0,
+      "dev_loss": 1.4413,
+      "dev_chrf": 63.04,
+      "dev_bleu": 43.47
+    },
+    {
+      "epoch": 1,
+      "step": 72,
+      "dev_loss": 1.2513,
+      "dev_chrf": 64.61,
+      "dev_bleu": 44.9,
+      "elapsed_s": 137.0
+    },
+    {
+      "epoch": 2,
+      "step": 144,
+      "dev_loss": 1.2508,
+      "dev_chrf": 64.55,
+      "dev_bleu": 44.77,
+      "elapsed_s": 279.6
+    },
+    {
+      "epoch": 3,
+      "step": 216,
+      "dev_loss": 1.265,
+      "dev_chrf": 64.29,
+      "dev_bleu": 44.47,
+      "elapsed_s": 418.4
+    }
+  ],
+  "train_seconds": 424.2,
+  "gpu": "Tesla T4"
+}

@@ -1,0 +1,914 @@
+{
+  "systems": [
+    "it2-1b",
+    "it2-200m",
+    "nllb-600m",
+    "it2-1b-lora",
+    "it2-200m-lora"
+  ],
+  "skipped_systems": [],
+  "per_system": {
+    "it2-1b": {
+      "numbers": {
+        "total": 156,
+        "preserved": 146,
+        "rate": 0.9358974358974359
+      },
+      "citations": {
+        "total": 4,
+        "preserved": 4,
+        "rate": 1.0
+      },
+      "terms": {
+        "n": 126,
+        "hit_any_rate": 0.8253968253968254,
+        "hit_ref_rate": 0.5793650793650794,
+        "by_category": {
+          "archaic/formulaic": {
+            "n": 9,
+            "hit_any_rate": 0.7777777777777778,
+            "hit_ref_rate": 0.3333333333333333
+          },
+          "legal-term": {
+            "n": 90,
+            "hit_any_rate": 0.8111111111111111,
+            "hit_ref_rate": 0.5111111111111111
+          },
+          "named-entity": {
+            "n": 17,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 1.0
+          },
+          "citation/section/date": {
+            "n": 10,
+            "hit_any_rate": 0.7,
+            "hit_ref_rate": 0.7
+          }
+        }
+      },
+      "repetition_segments": 1,
+      "omission_segments": 3,
+      "addition_segments": 0,
+      "mean_length_ratio": 0.9648699702374722
+    },
+    "it2-200m": {
+      "numbers": {
+        "total": 156,
+        "preserved": 150,
+        "rate": 0.9615384615384616
+      },
+      "citations": {
+        "total": 4,
+        "preserved": 4,
+        "rate": 1.0
+      },
+      "terms": {
+        "n": 126,
+        "hit_any_rate": 0.8968253968253969,
+        "hit_ref_rate": 0.6587301587301587,
+        "by_category": {
+          "archaic/formulaic": {
+            "n": 9,
+            "hit_any_rate": 0.5555555555555556,
+            "hit_ref_rate": 0.3333333333333333
+          },
+          "legal-term": {
+            "n": 90,
+            "hit_any_rate": 0.9333333333333333,
+            "hit_ref_rate": 0.6222222222222222
+          },
+          "named-entity": {
+            "n": 17,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 1.0
+          },
+          "citation/section/date": {
+            "n": 10,
+            "hit_any_rate": 0.7,
+            "hit_ref_rate": 0.7
+          }
+        }
+      },
+      "repetition_segments": 0,
+      "omission_segments": 2,
+      "addition_segments": 0,
+      "mean_length_ratio": 0.9618653566266164
+    },
+    "nllb-600m": {
+      "numbers": {
+        "total": 156,
+        "preserved": 150,
+        "rate": 0.9615384615384616
+      },
+      "citations": {
+        "total": 4,
+        "preserved": 4,
+        "rate": 1.0
+      },
+      "terms": {
+        "n": 126,
+        "hit_any_rate": 0.5634920634920635,
+        "hit_ref_rate": 0.30952380952380953,
+        "by_category": {
+          "archaic/formulaic": {
+            "n": 9,
+            "hit_any_rate": 0.5555555555555556,
+            "hit_ref_rate": 0.2222222222222222
+          },
+          "legal-term": {
+            "n": 90,
+            "hit_any_rate": 0.4666666666666667,
+            "hit_ref_rate": 0.16666666666666666
+          },
+          "named-entity": {
+            "n": 17,
+            "hit_any_rate": 0.8235294117647058,
+            "hit_ref_rate": 0.8235294117647058
+          },
+          "citation/section/date": {
+            "n": 10,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 0.8
+          }
+        }
+      },
+      "repetition_segments": 0,
+      "omission_segments": 5,
+      "addition_segments": 0,
+      "mean_length_ratio": 0.951369664394425
+    },
+    "it2-1b-lora": {
+      "numbers": {
+        "total": 156,
+        "preserved": 149,
+        "rate": 0.9551282051282052
+      },
+      "citations": {
+        "total": 4,
+        "preserved": 4,
+        "rate": 1.0
+      },
+      "terms": {
+        "n": 126,
+        "hit_any_rate": 0.9682539682539683,
+        "hit_ref_rate": 0.7142857142857143,
+        "by_category": {
+          "archaic/formulaic": {
+            "n": 9,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 0.6666666666666666
+          },
+          "legal-term": {
+            "n": 90,
+            "hit_any_rate": 0.9555555555555556,
+            "hit_ref_rate": 0.6555555555555556
+          },
+          "named-entity": {
+            "n": 17,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 1.0
+          },
+          "citation/section/date": {
+            "n": 10,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 0.8
+          }
+        }
+      },
+      "repetition_segments": 1,
+      "omission_segments": 2,
+      "addition_segments": 1,
+      "mean_length_ratio": 0.9941145681694544
+    },
+    "it2-200m-lora": {
+      "numbers": {
+        "total": 156,
+        "preserved": 144,
+        "rate": 0.9230769230769231
+      },
+      "citations": {
+        "total": 4,
+        "preserved": 4,
+        "rate": 1.0
+      },
+      "terms": {
+        "n": 126,
+        "hit_any_rate": 0.9841269841269841,
+        "hit_ref_rate": 0.8174603174603174,
+        "by_category": {
+          "archaic/formulaic": {
+            "n": 9,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 0.6666666666666666
+          },
+          "legal-term": {
+            "n": 90,
+            "hit_any_rate": 0.9777777777777777,
+            "hit_ref_rate": 0.8
+          },
+          "named-entity": {
+            "n": 17,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 1.0
+          },
+          "citation/section/date": {
+            "n": 10,
+            "hit_any_rate": 1.0,
+            "hit_ref_rate": 0.8
+          }
+        }
+      },
+      "repetition_segments": 1,
+      "omission_segments": 1,
+      "addition_segments": 1,
+      "mean_length_ratio": 1.008105589526798
+    }
+  },
+  "comparisons": {
+    "it2-1b_vs_it2-1b-lora": {
+      "overall": {
+        "win": 57,
+        "tie": 36,
+        "loss": 27
+      },
+      "by_source_length": {
+        "<=20": {
+          "win": 19,
+          "tie": 15,
+          "loss": 6
+        },
+        "21-40": {
+          "win": 27,
+          "tie": 12,
+          "loss": 14
+        },
+        ">40": {
+          "win": 11,
+          "tie": 9,
+          "loss": 7
+        }
+      },
+      "by_term_category": {
+        "archaic/formulaic": {
+          "win": 6,
+          "tie": 0,
+          "loss": 3
+        },
+        "legal-term": {
+          "win": 41,
+          "tie": 25,
+          "loss": 24
+        },
+        "named-entity": {
+          "win": 6,
+          "tie": 9,
+          "loss": 2
+        },
+        "citation/section/date": {
+          "win": 6,
+          "tie": 3,
+          "loss": 1
+        }
+      },
+      "top_gains": [
+        {
+          "pair_id": "10-0000",
+          "delta": 86.27
+        },
+        {
+          "pair_id": "11-0000",
+          "delta": 80.52
+        },
+        {
+          "pair_id": "27-0021",
+          "delta": 64.08
+        },
+        {
+          "pair_id": "27-0000",
+          "delta": 41.43
+        },
+        {
+          "pair_id": "27-0003",
+          "delta": 22.04
+        },
+        {
+          "pair_id": "11-0007",
+          "delta": 20.35
+        },
+        {
+          "pair_id": "11-0009",
+          "delta": 20.090000000000003
+        },
+        {
+          "pair_id": "11-0020",
+          "delta": 18.819999999999993
+        },
+        {
+          "pair_id": "27-0030",
+          "delta": 18.229999999999997
+        },
+        {
+          "pair_id": "11-0023",
+          "delta": 18.18
+        }
+      ],
+      "top_losses": [
+        {
+          "pair_id": "27-0007",
+          "delta": -19.939999999999998
+        },
+        {
+          "pair_id": "27-0016",
+          "delta": -17.08
+        },
+        {
+          "pair_id": "11-0018",
+          "delta": -13.61
+        },
+        {
+          "pair_id": "27-0010",
+          "delta": -12.36
+        },
+        {
+          "pair_id": "27-0027",
+          "delta": -11.459999999999994
+        },
+        {
+          "pair_id": "10-0022",
+          "delta": -10.72999999999999
+        },
+        {
+          "pair_id": "10-0048",
+          "delta": -10.11
+        },
+        {
+          "pair_id": "10-0023",
+          "delta": -9.91000000000001
+        },
+        {
+          "pair_id": "10-0006",
+          "delta": -9.569999999999993
+        },
+        {
+          "pair_id": "27-0014",
+          "delta": -9.240000000000002
+        }
+      ]
+    },
+    "it2-200m_vs_it2-200m-lora": {
+      "overall": {
+        "win": 53,
+        "tie": 44,
+        "loss": 23
+      },
+      "by_source_length": {
+        "<=20": {
+          "win": 19,
+          "tie": 18,
+          "loss": 3
+        },
+        "21-40": {
+          "win": 26,
+          "tie": 16,
+          "loss": 11
+        },
+        ">40": {
+          "win": 8,
+          "tie": 10,
+          "loss": 9
+        }
+      },
+      "by_term_category": {
+        "archaic/formulaic": {
+          "win": 5,
+          "tie": 3,
+          "loss": 1
+        },
+        "legal-term": {
+          "win": 34,
+          "tie": 31,
+          "loss": 25
+        },
+        "named-entity": {
+          "win": 6,
+          "tie": 8,
+          "loss": 3
+        },
+        "citation/section/date": {
+          "win": 2,
+          "tie": 7,
+          "loss": 1
+        }
+      },
+      "top_gains": [
+        {
+          "pair_id": "10-0000",
+          "delta": 86.27
+        },
+        {
+          "pair_id": "11-0000",
+          "delta": 80.52
+        },
+        {
+          "pair_id": "27-0000",
+          "delta": 68.41
+        },
+        {
+          "pair_id": "27-0041",
+          "delta": 67.17
+        },
+        {
+          "pair_id": "11-0006",
+          "delta": 23.669999999999995
+        },
+        {
+          "pair_id": "27-0016",
+          "delta": 21.78
+        },
+        {
+          "pair_id": "27-0030",
+          "delta": 21.28
+        },
+        {
+          "pair_id": "11-0007",
+          "delta": 20.130000000000003
+        },
+        {
+          "pair_id": "11-0019",
+          "delta": 18.069999999999993
+        },
+        {
+          "pair_id": "27-0040",
+          "delta": 16.949999999999996
+        }
+      ],
+      "top_losses": [
+        {
+          "pair_id": "10-0018",
+          "delta": -21.89999999999999
+        },
+        {
+          "pair_id": "27-0027",
+          "delta": -19.339999999999996
+        },
+        {
+          "pair_id": "27-0007",
+          "delta": -13.840000000000003
+        },
+        {
+          "pair_id": "27-0019",
+          "delta": -13.659999999999997
+        },
+        {
+          "pair_id": "27-0004",
+          "delta": -12.629999999999995
+        },
+        {
+          "pair_id": "11-0015",
+          "delta": -9.0
+        },
+        {
+          "pair_id": "27-0033",
+          "delta": -8.900000000000006
+        },
+        {
+          "pair_id": "10-0032",
+          "delta": -8.259999999999991
+        },
+        {
+          "pair_id": "10-0006",
+          "delta": -7.880000000000003
+        },
+        {
+          "pair_id": "11-0005",
+          "delta": -7.509999999999991
+        }
+      ]
+    },
+    "it2-1b_vs_it2-200m": {
+      "overall": {
+        "win": 34,
+        "tie": 45,
+        "loss": 41
+      },
+      "by_source_length": {
+        "<=20": {
+          "win": 8,
+          "tie": 19,
+          "loss": 13
+        },
+        "21-40": {
+          "win": 21,
+          "tie": 15,
+          "loss": 17
+        },
+        ">40": {
+          "win": 5,
+          "tie": 11,
+          "loss": 11
+        }
+      },
+      "by_term_category": {
+        "archaic/formulaic": {
+          "win": 1,
+          "tie": 5,
+          "loss": 3
+        },
+        "legal-term": {
+          "win": 30,
+          "tie": 30,
+          "loss": 30
+        },
+        "named-entity": {
+          "win": 6,
+          "tie": 7,
+          "loss": 4
+        },
+        "citation/section/date": {
+          "win": 0,
+          "tie": 3,
+          "loss": 7
+        }
+      },
+      "top_gains": [
+        {
+          "pair_id": "27-0021",
+          "delta": 62.85
+        },
+        {
+          "pair_id": "11-0023",
+          "delta": 22.53
+        },
+        {
+          "pair_id": "10-0042",
+          "delta": 13.719999999999999
+        },
+        {
+          "pair_id": "10-0030",
+          "delta": 11.040000000000006
+        },
+        {
+          "pair_id": "11-0014",
+          "delta": 10.979999999999997
+        },
+        {
+          "pair_id": "10-0013",
+          "delta": 10.36
+        },
+        {
+          "pair_id": "10-0028",
+          "delta": 9.77000000000001
+        },
+        {
+          "pair_id": "11-0005",
+          "delta": 9.639999999999993
+        },
+        {
+          "pair_id": "11-0011",
+          "delta": 9.0
+        },
+        {
+          "pair_id": "10-0002",
+          "delta": 8.810000000000002
+        }
+      ],
+      "top_losses": [
+        {
+          "pair_id": "27-0041",
+          "delta": -67.17
+        },
+        {
+          "pair_id": "27-0000",
+          "delta": -26.980000000000004
+        },
+        {
+          "pair_id": "27-0016",
+          "delta": -21.78
+        },
+        {
+          "pair_id": "27-0011",
+          "delta": -20.880000000000003
+        },
+        {
+          "pair_id": "10-0022",
+          "delta": -14.709999999999994
+        },
+        {
+          "pair_id": "11-0017",
+          "delta": -14.429999999999993
+        },
+        {
+          "pair_id": "27-0020",
+          "delta": -14.36
+        },
+        {
+          "pair_id": "10-0031",
+          "delta": -14.089999999999996
+        },
+        {
+          "pair_id": "27-0017",
+          "delta": -12.75
+        },
+        {
+          "pair_id": "11-0006",
+          "delta": -10.249999999999993
+        }
+      ]
+    },
+    "it2-1b_vs_nllb-600m": {
+      "overall": {
+        "win": 18,
+        "tie": 19,
+        "loss": 83
+      },
+      "by_source_length": {
+        "<=20": {
+          "win": 8,
+          "tie": 7,
+          "loss": 25
+        },
+        "21-40": {
+          "win": 6,
+          "tie": 8,
+          "loss": 39
+        },
+        ">40": {
+          "win": 4,
+          "tie": 4,
+          "loss": 19
+        }
+      },
+      "by_term_category": {
+        "archaic/formulaic": {
+          "win": 2,
+          "tie": 1,
+          "loss": 6
+        },
+        "legal-term": {
+          "win": 13,
+          "tie": 10,
+          "loss": 67
+        },
+        "named-entity": {
+          "win": 2,
+          "tie": 2,
+          "loss": 13
+        },
+        "citation/section/date": {
+          "win": 0,
+          "tie": 1,
+          "loss": 9
+        }
+      },
+      "top_gains": [
+        {
+          "pair_id": "27-0021",
+          "delta": 48.61
+        },
+        {
+          "pair_id": "10-0036",
+          "delta": 24.120000000000005
+        },
+        {
+          "pair_id": "11-0007",
+          "delta": 23.9
+        },
+        {
+          "pair_id": "10-0000",
+          "delta": 20.970000000000002
+        },
+        {
+          "pair_id": "11-0009",
+          "delta": 19.71
+        },
+        {
+          "pair_id": "10-0037",
+          "delta": 18.310000000000002
+        },
+        {
+          "pair_id": "11-0000",
+          "delta": 17.17
+        },
+        {
+          "pair_id": "11-0023",
+          "delta": 14.410000000000004
+        },
+        {
+          "pair_id": "27-0008",
+          "delta": 13.239999999999995
+        },
+        {
+          "pair_id": "11-0024",
+          "delta": 10.049999999999997
+        }
+      ],
+      "top_losses": [
+        {
+          "pair_id": "10-0013",
+          "delta": -71.56
+        },
+        {
+          "pair_id": "10-0012",
+          "delta": -52.23
+        },
+        {
+          "pair_id": "27-0020",
+          "delta": -46.96000000000001
+        },
+        {
+          "pair_id": "27-0010",
+          "delta": -44.34
+        },
+        {
+          "pair_id": "27-0016",
+          "delta": -43.89000000000001
+        },
+        {
+          "pair_id": "10-0017",
+          "delta": -43.02
+        },
+        {
+          "pair_id": "27-0028",
+          "delta": -34.99
+        },
+        {
+          "pair_id": "27-0023",
+          "delta": -30.36
+        },
+        {
+          "pair_id": "10-0030",
+          "delta": -29.57
+        },
+        {
+          "pair_id": "27-0026",
+          "delta": -26.889999999999993
+        }
+      ]
+    },
+    "it2-1b-lora_vs_it2-200m-lora": {
+      "overall": {
+        "win": 45,
+        "tie": 35,
+        "loss": 40
+      },
+      "by_source_length": {
+        "<=20": {
+          "win": 13,
+          "tie": 16,
+          "loss": 11
+        },
+        "21-40": {
+          "win": 27,
+          "tie": 12,
+          "loss": 14
+        },
+        ">40": {
+          "win": 5,
+          "tie": 7,
+          "loss": 15
+        }
+      },
+      "by_term_category": {
+        "archaic/formulaic": {
+          "win": 2,
+          "tie": 4,
+          "loss": 3
+        },
+        "legal-term": {
+          "win": 34,
+          "tie": 25,
+          "loss": 31
+        },
+        "named-entity": {
+          "win": 7,
+          "tie": 6,
+          "loss": 4
+        },
+        "citation/section/date": {
+          "win": 1,
+          "tie": 3,
+          "loss": 6
+        }
+      },
+      "top_gains": [
+        {
+          "pair_id": "27-0016",
+          "delta": 17.08
+        },
+        {
+          "pair_id": "27-0040",
+          "delta": 16.949999999999996
+        },
+        {
+          "pair_id": "11-0003",
+          "delta": 14.589999999999996
+        },
+        {
+          "pair_id": "11-0018",
+          "delta": 13.61
+        },
+        {
+          "pair_id": "10-0023",
+          "delta": 13.14
+        },
+        {
+          "pair_id": "27-0010",
+          "delta": 12.36
+        },
+        {
+          "pair_id": "27-0007",
+          "delta": 11.189999999999998
+        },
+        {
+          "pair_id": "10-0030",
+          "delta": 11.040000000000006
+        },
+        {
+          "pair_id": "27-0030",
+          "delta": 9.990000000000002
+        },
+        {
+          "pair_id": "10-0044",
+          "delta": 9.589999999999996
+        }
+      ],
+      "top_losses": [
+        {
+          "pair_id": "10-0018",
+          "delta": -26.090000000000003
+        },
+        {
+          "pair_id": "27-0003",
+          "delta": -23.91
+        },
+        {
+          "pair_id": "27-0011",
+          "delta": -22.510000000000005
+        },
+        {
+          "pair_id": "27-0019",
+          "delta": -22.33
+        },
+        {
+          "pair_id": "11-0027",
+          "delta": -14.280000000000008
+        },
+        {
+          "pair_id": "11-0005",
+          "delta": -10.83999999999999
+        },
+        {
+          "pair_id": "27-0038",
+          "delta": -9.86
+        },
+        {
+          "pair_id": "11-0009",
+          "delta": -9.840000000000003
+        },
+        {
+          "pair_id": "27-0004",
+          "delta": -9.75
+        },
+        {
+          "pair_id": "11-0024",
+          "delta": -8.570000000000007
+        }
+      ]
+    }
+  },
+  "robustness": [
+    {
+      "min_src_words": 0,
+      "n_segments": 120,
+      "chrf": {
+        "it2-1b": 64.42,
+        "it2-200m": 65.27,
+        "nllb-600m": 55.39,
+        "it2-1b-lora": 67.43,
+        "it2-200m-lora": 66.94
+      }
+    },
+    {
+      "min_src_words": 5,
+      "n_segments": 114,
+      "chrf": {
+        "it2-1b": 64.5,
+        "it2-200m": 65.43,
+        "nllb-600m": 55.37,
+        "it2-1b-lora": 67.32,
+        "it2-200m-lora": 66.83
+      }
+    },
+    {
+      "min_src_words": 10,
+      "n_segments": 106,
+      "chrf": {
+        "it2-1b": 64.72,
+        "it2-200m": 65.71,
+        "nllb-600m": 55.66,
+        "it2-1b-lora": 67.54,
+        "it2-200m-lora": 67.04
+      }
+    }
+  ]
+}

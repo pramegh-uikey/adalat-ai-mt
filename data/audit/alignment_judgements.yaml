@@ -1,0 +1,34 @@
+# Alignment judgements, made by reading each pair in full (2026-09-27).
+# correct = same content (loose/free translation allowed); partial = aligned but one side has extra/missing content;
+# wrong = different content.
+13-0024: {verdict: correct, note: "free translation, same content"}
+15-0032: {verdict: correct, note: ""}
+30-0017: {verdict: correct, note: ""}
+30-0014: {verdict: correct, note: "'cross objections' loosely rendered as आपत्तियों"}
+10-0017: {verdict: correct, note: ""}
+28-0069: {verdict: correct, note: ""}
+12-0031: {verdict: correct, note: ""}
+29-0012: {verdict: correct, note: ""}
+8-0003: {verdict: correct, note: "Devanagari digit ३ in the reference"}
+12-0020: {verdict: correct, note: ""}
+28-0046: {verdict: correct, note: "quoted statutory text (s.105 TP Act) aligned as one unit"}
+10-0020: {verdict: correct, note: ""}
+7-0020: {verdict: correct, note: ""}
+4-0027: {verdict: correct, note: ""}
+24-0055: {verdict: correct, note: ""}
+11-0026: {verdict: partial, note: "HI writes 'भाग-I' with a danda (भाग-।), so the HI sentence was split there; its tail is missing"}
+15-0040: {verdict: correct, note: "reference is loose but content-parallel"}
+1-0061: {verdict: correct, note: ""}
+21-0057: {verdict: correct, note: "multi-level marker 21.8. (viii) preserved on both sides"}
+7-0012: {verdict: correct, note: ""}
+# Supplementary: 10 pairs from the OCR-recovered Hindi documents (random.Random(7) over their train pairs).
+25-0000: {verdict: correct, note: "HI numbers 'Leave granted' as para 1, EN does not"}
+26-0029: {verdict: correct, note: ""}
+22-0023: {verdict: correct, note: ""}
+26-0017: {verdict: correct, note: "free translation"}
+22-0034: {verdict: correct, note: "date 23.11.2009 restored by text-layer number repair (OCR gave 23..2009)"}
+25-0001: {verdict: partial, note: "HI block also contains the following list of SLP numbers"}
+25-0010: {verdict: correct, note: ""}
+26-0001: {verdict: correct, note: ""}
+22-0001: {verdict: correct, note: ""}
+25-0005: {verdict: correct, note: ""}

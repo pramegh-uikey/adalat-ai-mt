@@ -1,0 +1,31 @@
+2026-09-27 12:17:46.251023: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+[metric] {"event": "setup", "n_train": 1149, "n_dev": 162, "device": "cuda", "trainable_params": 6488064, "total_params": 218264576}
+[metric] {"epoch": 0, "dev_loss": 1.4412, "dev_chrf": 62.41, "dev_bleu": 42.34}
+[metric] {"epoch": 1, "step": 20, "loss": 2.5362, "lr": 0.00023999999999999998}
+[metric] {"epoch": 1, "step": 40, "loss": 2.4484, "lr": 0.0002889434889434889}
+[metric] {"epoch": 1, "step": 60, "loss": 2.4279, "lr": 0.00027420147420147416}
+[metric] {"epoch": 1, "step": 72, "dev_loss": 1.3087, "dev_chrf": 64.4, "dev_bleu": 43.91, "elapsed_s": 132.8}
+[metric] {"epoch": 2, "step": 80, "loss": 2.3929, "lr": 0.00025945945945945944}
+[metric] {"epoch": 2, "step": 100, "loss": 2.375, "lr": 0.0002447174447174447}
+[metric] {"epoch": 2, "step": 120, "loss": 2.3877, "lr": 0.00022997542997542996}
+[metric] {"epoch": 2, "step": 140, "loss": 2.273, "lr": 0.00021523341523341523}
+[metric] {"epoch": 2, "step": 144, "dev_loss": 1.2828, "dev_chrf": 64.49, "dev_bleu": 44.21, "elapsed_s": 265.1}
+[metric] {"epoch": 3, "step": 160, "loss": 2.3142, "lr": 0.00020049140049140048}
+[metric] {"epoch": 3, "step": 180, "loss": 2.2494, "lr": 0.00018574938574938575}
+[metric] {"epoch": 3, "step": 200, "loss": 2.2751, "lr": 0.000171007371007371}
+[metric] {"epoch": 3, "step": 216, "dev_loss": 1.2787, "dev_chrf": 64.83, "dev_bleu": 44.96, "elapsed_s": 398.3}
+[metric] {"epoch": 4, "step": 220, "loss": 2.1997, "lr": 0.00015626535626535624}
+[metric] {"epoch": 4, "step": 240, "loss": 2.1904, "lr": 0.00014152334152334152}
+[metric] {"epoch": 4, "step": 260, "loss": 2.2058, "lr": 0.00012678132678132676}
+[metric] {"epoch": 4, "step": 280, "loss": 2.2047, "lr": 0.00011203931203931202}
+[metric] {"epoch": 4, "step": 288, "dev_loss": 1.2995, "dev_chrf": 64.2, "dev_bleu": 43.63, "elapsed_s": 531.3}
+[metric] {"epoch": 5, "step": 300, "loss": 2.2591, "lr": 9.72972972972973e-05}
+[metric] {"epoch": 5, "step": 320, "loss": 2.1384, "lr": 8.255528255528254e-05}
+[metric] {"epoch": 5, "step": 340, "loss": 2.1587, "lr": 6.781326781326781e-05}
+[metric] {"epoch": 5, "step": 360, "loss": 2.1289, "lr": 5.307125307125306e-05}
+[metric] {"epoch": 5, "step": 360, "dev_loss": 1.3125, "dev_chrf": 64.27, "dev_bleu": 44.07, "elapsed_s": 662.6}
+[metric] {"event": "early_stop", "epoch": 5, "best_epoch": 3}
+[metric] {"event": "done", "best_epoch": 3, "best_dev_chrf": 64.83}

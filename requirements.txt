@@ -1,0 +1,21 @@
+# Local (CPU) environment: data prep, tokenizer study, evaluation, tests
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+transformers==4.47.1
+sentence-transformers
+sentencepiece
+tokenizers
+tiktoken
+peft
+IndicTransToolkit
+sacrebleu
+numpy
+pandas
+openpyxl
+pymupdf
+pyyaml
+matplotlib
+protobuf
+pytest
+huggingface_hub
+Pillow

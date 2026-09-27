@@ -1,0 +1,21 @@
+2026-09-27 12:04:02.288417: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+[metric] {"event": "setup", "n_train": 1149, "n_dev": 162, "device": "cuda", "trainable_params": 17694720, "total_params": 1133238272}
+[metric] {"epoch": 0, "dev_loss": 1.4413, "dev_chrf": 63.04, "dev_bleu": 43.47}
+[metric] {"epoch": 1, "step": 20, "loss": 2.4838, "lr": 0.00023999999999999998}
+[metric] {"epoch": 1, "step": 40, "loss": 2.3841, "lr": 0.0002889434889434889}
+[metric] {"epoch": 1, "step": 60, "loss": 2.3485, "lr": 0.00027420147420147416}
+[metric] {"epoch": 1, "step": 72, "dev_loss": 1.2513, "dev_chrf": 64.61, "dev_bleu": 44.9, "elapsed_s": 137.0}
+[metric] {"epoch": 2, "step": 80, "loss": 2.2757, "lr": 0.00025945945945945944}
+[metric] {"epoch": 2, "step": 100, "loss": 2.2399, "lr": 0.0002447174447174447}
+[metric] {"epoch": 2, "step": 120, "loss": 2.2534, "lr": 0.00022997542997542996}
+[metric] {"epoch": 2, "step": 140, "loss": 2.1593, "lr": 0.00021523341523341523}
+[metric] {"epoch": 2, "step": 144, "dev_loss": 1.2508, "dev_chrf": 64.55, "dev_bleu": 44.77, "elapsed_s": 279.6}
+[metric] {"epoch": 3, "step": 160, "loss": 2.1292, "lr": 0.00020049140049140048}
+[metric] {"epoch": 3, "step": 180, "loss": 2.0651, "lr": 0.00018574938574938575}
+[metric] {"epoch": 3, "step": 200, "loss": 2.1001, "lr": 0.000171007371007371}
+[metric] {"epoch": 3, "step": 216, "dev_loss": 1.265, "dev_chrf": 64.29, "dev_bleu": 44.47, "elapsed_s": 418.4}
+[metric] {"event": "early_stop", "epoch": 3, "best_epoch": 1}
+[metric] {"event": "done", "best_epoch": 1, "best_dev_chrf": 64.61}

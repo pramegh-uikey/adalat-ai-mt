@@ -1,0 +1,46 @@
+# Legal EN→HI glossary used for terminology-accuracy analysis (NOT for training).
+# en: regex (case-insensitive, word-bounded by the matcher); hi: accepted Hindi renderings (stems; matched as substrings
+# after nukta/chandrabindu normalisation). category: the qualitative category the term exercises.
+# Variants were drafted from standard Hindi legal usage (e.g. the Legislative Department's glossary conventions) and
+# refined against what the TRAIN-split references actually use (never the test split).
+terms:
+  - {en: "appellants?", hi: ["अपीलार्थी", "अपीलकर्ता", "अपीलकर्त्ता", "अपीलांट"], category: legal-term}
+  - {en: "respondents?", hi: ["प्रत्यर्थी", "प्रतिवादी", "रेस्पोंडेंट"], category: legal-term}
+  - {en: "writ petitions?", hi: ["रिट याचिका", "रिट पिटीशन", "रिट-याचिका"], category: legal-term}
+  - {en: "quash(ed|ing)?", hi: ["अभिखंडित", "अभिखण्डित", "रद्द", "निरस्त", "खारिज"], category: legal-term}
+  - {en: "cogni[sz]ance", hi: ["संज्ञान"], category: legal-term}
+  - {en: "reinstate(ment|d)?", hi: ["बहाल", "बहाली", "पुनर्स्थापन", "पुनर्स्थापित", "पुनःस्थापन"], category: legal-term}
+  - {en: "charge[- ]?sheets?", hi: ["आरोप पत्र", "आरोप-पत्र", "आरोपपत्र", "चार्जशीट"], category: legal-term}
+  - {en: "high court", hi: ["उच्च न्यायालय", "हाईकोर्ट", "हाई कोर्ट"], category: named-entity}
+  - {en: "supreme court", hi: ["उच्चतम न्यायालय", "सर्वोच्च न्यायालय", "सुप्रीम कोर्ट"], category: named-entity}
+  - {en: "learned (senior )?counsel", hi: ["विद्वान", "विद्वत", "विद्वत्"], category: archaic/formulaic}
+  - {en: "sale deeds?", hi: ["बिक्री विलेख", "विक्रय विलेख", "बैनामा", "विक्रय-विलेख"], category: legal-term}
+  - {en: "injunction", hi: ["निषेधाज्ञा", "व्यादेश"], category: legal-term}
+  - {en: "plaintiffs?", hi: ["वादी"], category: legal-term}
+  - {en: "defendants?", hi: ["प्रतिवादी"], category: legal-term}
+  - {en: "convict(ion|ed)", hi: ["दोषसिद्ध", "दोषी ठहराया", "दोषी करार", "सिद्धदोष"], category: legal-term}
+  - {en: "acquit(tal|ted)", hi: ["दोषमुक्त", "बरी"], category: legal-term}
+  - {en: "(the )?accused", hi: ["अभियुक्त", "आरोपी", "अभियुक्तों"], category: legal-term}
+  - {en: "bail", hi: ["जमानत", "ज़मानत"], category: legal-term}
+  - {en: "prosecution", hi: ["अभियोजन"], category: legal-term}
+  - {en: "set aside", hi: ["अपास्त", "रद्द", "निरस्त"], category: legal-term}
+  - {en: "maintainab(le|ility)", hi: ["पोषणीय", "संधार्य", "चलने योग्य", "सुनवाई योग्य"], category: legal-term}
+  - {en: "jurisdiction", hi: ["क्षेत्राधिकार", "अधिकारिता", "अधिकार क्षेत्र", "अधिकार-क्षेत्र"], category: legal-term}
+  - {en: "disciplinary authority", hi: ["अनुशासनिक प्राधिकारी", "अनुशासनात्मक प्राधिकारी", "अनुशासनिक प्राधिकरण", "अनुशासनात्मक प्राधिकरण"], category: legal-term}
+  - {en: "suspension", hi: ["निलंबन"], category: legal-term}
+  - {en: "leave granted", hi: ["अनुमति प्रदान", "अनुमति अनुदत्त", "अनुमति दी गई", "इजाजत दी"], category: archaic/formulaic}
+  - {en: "hereinafter", hi: ["इसके बाद", "इसमें इसके पश्चात", "इसमें आगे", "इसके पश्चात", "आगे"], category: archaic/formulaic}
+  - {en: "the said", hi: ["उक्त", "कथित"], category: archaic/formulaic}
+  - {en: "notwithstanding", hi: ["के होते हुए भी", "के बावजूद", "होते हुए भी"], category: archaic/formulaic}
+  - {en: "revision petition", hi: ["पुनरीक्षण याचिका"], category: legal-term}
+  - {en: "special leave petition", hi: ["विशेष अनुमति याचिका"], category: legal-term}
+  - {en: "compensation", hi: ["मुआवजा", "मुआवज़ा", "प्रतिकर", "क्षतिपूर्ति"], category: legal-term}
+  - {en: "rigorous imprisonment", hi: ["कठोर कारावास", "सश्रम कारावास"], category: legal-term}
+  - {en: "sections?", hi: ["धारा"], category: citation/section/date}
+  - {en: "indian penal code|ipc", hi: ["भारतीय दंड संहिता", "भा.दं.सं", "आईपीसी", "भादंसं", "भा.द.सं"], category: citation/section/date}
+  - {en: "code of criminal procedure|cr\\.?\\s?p\\.?c\\.?", hi: ["दंड प्रक्रिया संहिता", "द.प्र.सं", "दं.प्र.सं", "सीआरपीसी", "दप्रसं"], category: citation/section/date}
+  - {en: "evidence", hi: ["साक्ष्य", "सबूत"], category: legal-term}
+  - {en: "witness(es)?", hi: ["गवाह", "साक्षी"], category: legal-term}
+  - {en: "judgments?", hi: ["निर्णय", "फैसला", "फैसले", "फ़ैसल"], category: legal-term}
+  - {en: "dismissed", hi: ["खारिज", "ख़ारिज", "निरस्त"], category: legal-term}
+  - {en: "tribunal", hi: ["अधिकरण", "न्यायाधिकरण", "ट्रिब्यूनल"], category: legal-term}

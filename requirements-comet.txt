@@ -1,0 +1,6 @@
+# COMET scoring in its own venv (`make setup-comet`): unbabel-comet pins numpy<2 / protobuf<5, which conflict with
+# the main environment and with the Colab image.
+torch
+unbabel-comet==2.2.7
+pyyaml
+setuptools<81    # torchmetrics (a comet dependency) still imports pkg_resources

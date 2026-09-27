@@ -1,0 +1,10 @@
+# MT system registry for `python -m adalat_mt.inference.translate` (Phase 3).
+generation: {num_beams: 5, max_length: 256, batch_size: 16}
+systems:
+  it2-1b:      {kind: indictrans2, model: ai4bharat/indictrans2-en-indic-1B, label: "IndicTrans2-1B zero-shot"}
+  it2-200m:    {kind: indictrans2, model: ai4bharat/indictrans2-en-indic-dist-200M, label: "IndicTrans2-dist-200M zero-shot"}
+  nllb-600m:   {kind: nllb, model: facebook/nllb-200-distilled-600M, label: "NLLB-200-distilled-600M zero-shot"}
+  it2-1b-lora: {kind: indictrans2, model: ai4bharat/indictrans2-en-indic-1B, adapter: outputs/lora_it2_1b/best,
+                label: "IndicTrans2-1B + LoRA (legal)"}
+  it2-200m-lora: {kind: indictrans2, model: ai4bharat/indictrans2-en-indic-dist-200M, adapter: outputs/lora_it2_200m/best,
+                  label: "IndicTrans2-dist-200M + LoRA (legal)"}

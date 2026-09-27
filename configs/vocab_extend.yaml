@@ -1,0 +1,6 @@
+# P2 vocabulary-extension experiment (DECISIONS.md / phase2_tokenization spec).
+base_ident: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+vocab_sizes: [2000, 4000, 8000, 16000]
+seed: 13
+out_dir: results
+artifacts_dir: artifacts/tokenizers

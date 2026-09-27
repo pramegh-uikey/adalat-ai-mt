@@ -1,0 +1,373 @@
+{
+  "split": "test",
+  "n_segments": 120,
+  "signatures": {
+    "bleu": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "spbleu": "nrefs:1|case:mixed|eff:no|tok:flores200|smooth:exp|version:2.6.0",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.6.0"
+  },
+  "bootstrap": {
+    "n_samples": 1000,
+    "seed": 13,
+    "p_value": "one-sided, fraction of resamples with delta<=0"
+  },
+  "systems": [
+    {
+      "name": "it2-1b",
+      "label": "IndicTrans2-1B zero-shot",
+      "split": "test",
+      "bleu": 46.04,
+      "bleu_tokenize": "13a",
+      "spbleu": 47.64,
+      "chrf": 64.42,
+      "chrf_word_order": 2,
+      "hyp_path": "results/predictions/it2-1b.test.hi",
+      "ref_path": "results/predictions/test.ref.hi",
+      "tokens_in": 4835,
+      "tokens_out": 4601,
+      "seconds": 19.585637347000045,
+      "sents_per_sec": 6.126938729332724,
+      "tokens_out_per_sec": 234.91704244716553,
+      "device": "cuda",
+      "comet": 0.8012
+    },
+    {
+      "name": "it2-200m",
+      "label": "IndicTrans2-dist-200M zero-shot",
+      "split": "test",
+      "bleu": 46.39,
+      "bleu_tokenize": "13a",
+      "spbleu": 48.23,
+      "chrf": 65.27,
+      "chrf_word_order": 2,
+      "hyp_path": "results/predictions/it2-200m.test.hi",
+      "ref_path": "results/predictions/test.ref.hi",
+      "tokens_in": 4835,
+      "tokens_out": 4508,
+      "seconds": 15.270105899000043,
+      "sents_per_sec": 7.858491669521307,
+      "tokens_out_per_sec": 295.2173370516837,
+      "device": "cuda",
+      "comet": 0.8004
+    },
+    {
+      "name": "nllb-600m",
+      "label": "NLLB-200-distilled-600M zero-shot",
+      "split": "test",
+      "bleu": 34.21,
+      "bleu_tokenize": "13a",
+      "spbleu": 35.25,
+      "chrf": 55.39,
+      "chrf_word_order": 2,
+      "hyp_path": "results/predictions/nllb-600m.test.hi",
+      "ref_path": "results/predictions/test.ref.hi",
+      "tokens_in": 5049,
+      "tokens_out": 4847,
+      "seconds": 17.311147258999995,
+      "sents_per_sec": 6.931949581655398,
+      "tokens_out_per_sec": 279.9929968523643,
+      "device": "cuda",
+      "comet": 0.7695
+    },
+    {
+      "name": "it2-1b-lora",
+      "label": "IndicTrans2-1B + LoRA (legal)",
+      "split": "test",
+      "bleu": 49.06,
+      "bleu_tokenize": "13a",
+      "spbleu": 51.8,
+      "chrf": 67.43,
+      "chrf_word_order": 2,
+      "hyp_path": "results/predictions/it2-1b-lora.test.hi",
+      "ref_path": "results/predictions/test.ref.hi",
+      "tokens_in": 4835,
+      "tokens_out": 4595,
+      "seconds": 22.679470705000085,
+      "sents_per_sec": 5.291128772839655,
+      "tokens_out_per_sec": 202.6061392599851,
+      "device": "cuda",
+      "comet": 0.8127
+    },
+    {
+      "name": "it2-200m-lora",
+      "label": "IndicTrans2-dist-200M + LoRA (legal)",
+      "split": "test",
+      "bleu": 47.54,
+      "bleu_tokenize": "13a",
+      "spbleu": 51.36,
+      "chrf": 66.94,
+      "chrf_word_order": 2,
+      "hyp_path": "results/predictions/it2-200m-lora.test.hi",
+      "ref_path": "results/predictions/test.ref.hi",
+      "tokens_in": 4835,
+      "tokens_out": 4757,
+      "seconds": 22.56516135699985,
+      "sents_per_sec": 5.317932280718004,
+      "tokens_out_per_sec": 210.81169882812955,
+      "device": "cuda",
+      "comet": 0.8115
+    }
+  ],
+  "significance": [
+    {
+      "a": "it2-1b",
+      "b": "it2-1b-lora",
+      "metric": "bleu",
+      "a_score": 46.04,
+      "b_score": 49.06,
+      "delta": 3.02,
+      "ci95": [
+        -1.83,
+        7.06
+      ],
+      "p_value": 0.088
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-1b-lora",
+      "metric": "spbleu",
+      "a_score": 47.64,
+      "b_score": 51.8,
+      "delta": 4.16,
+      "ci95": [
+        1.71,
+        7.1
+      ],
+      "p_value": 0.0
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-1b-lora",
+      "metric": "chrf",
+      "a_score": 64.42,
+      "b_score": 67.43,
+      "delta": 3.02,
+      "ci95": [
+        0.7,
+        6.29
+      ],
+      "p_value": 0.002
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-1b-lora",
+      "metric": "comet",
+      "a_score": 0.8012,
+      "b_score": 0.8127,
+      "delta": 0.0115,
+      "ci95": [
+        -0.0031,
+        0.0291
+      ],
+      "p_value": 0.07
+    },
+    {
+      "a": "it2-200m",
+      "b": "it2-200m-lora",
+      "metric": "bleu",
+      "a_score": 46.39,
+      "b_score": 47.54,
+      "delta": 1.14,
+      "ci95": [
+        -4.75,
+        3.55
+      ],
+      "p_value": 0.32
+    },
+    {
+      "a": "it2-200m",
+      "b": "it2-200m-lora",
+      "metric": "spbleu",
+      "a_score": 48.23,
+      "b_score": 51.36,
+      "delta": 3.13,
+      "ci95": [
+        1.18,
+        5.18
+      ],
+      "p_value": 0.001
+    },
+    {
+      "a": "it2-200m",
+      "b": "it2-200m-lora",
+      "metric": "chrf",
+      "a_score": 65.27,
+      "b_score": 66.94,
+      "delta": 1.68,
+      "ci95": [
+        0.4,
+        3.15
+      ],
+      "p_value": 0.006
+    },
+    {
+      "a": "it2-200m",
+      "b": "it2-200m-lora",
+      "metric": "comet",
+      "a_score": 0.8004,
+      "b_score": 0.8115,
+      "delta": 0.0111,
+      "ci95": [
+        -0.0028,
+        0.0259
+      ],
+      "p_value": 0.055
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-200m",
+      "metric": "bleu",
+      "a_score": 46.04,
+      "b_score": 46.39,
+      "delta": 0.35,
+      "ci95": [
+        -2.21,
+        4.76
+      ],
+      "p_value": 0.417
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-200m",
+      "metric": "spbleu",
+      "a_score": 47.64,
+      "b_score": 48.23,
+      "delta": 0.59,
+      "ci95": [
+        -2.05,
+        3.37
+      ],
+      "p_value": 0.363
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-200m",
+      "metric": "chrf",
+      "a_score": 64.42,
+      "b_score": 65.27,
+      "delta": 0.85,
+      "ci95": [
+        -1.5,
+        4.16
+      ],
+      "p_value": 0.333
+    },
+    {
+      "a": "it2-1b",
+      "b": "it2-200m",
+      "metric": "comet",
+      "a_score": 0.8012,
+      "b_score": 0.8004,
+      "delta": -0.0008,
+      "ci95": [
+        -0.0117,
+        0.0127
+      ],
+      "p_value": 0.589
+    },
+    {
+      "a": "it2-1b",
+      "b": "nllb-600m",
+      "metric": "bleu",
+      "a_score": 46.04,
+      "b_score": 34.21,
+      "delta": -11.83,
+      "ci95": [
+        -15.27,
+        -6.94
+      ],
+      "p_value": 1.0
+    },
+    {
+      "a": "it2-1b",
+      "b": "nllb-600m",
+      "metric": "spbleu",
+      "a_score": 47.64,
+      "b_score": 35.25,
+      "delta": -12.39,
+      "ci95": [
+        -15.69,
+        -8.89
+      ],
+      "p_value": 1.0
+    },
+    {
+      "a": "it2-1b",
+      "b": "nllb-600m",
+      "metric": "chrf",
+      "a_score": 64.42,
+      "b_score": 55.39,
+      "delta": -9.03,
+      "ci95": [
+        -12.07,
+        -5.57
+      ],
+      "p_value": 1.0
+    },
+    {
+      "a": "it2-1b",
+      "b": "nllb-600m",
+      "metric": "comet",
+      "a_score": 0.8012,
+      "b_score": 0.7695,
+      "delta": -0.0317,
+      "ci95": [
+        -0.0504,
+        -0.0113
+      ],
+      "p_value": 0.999
+    },
+    {
+      "a": "it2-1b-lora",
+      "b": "it2-200m-lora",
+      "metric": "bleu",
+      "a_score": 49.06,
+      "b_score": 47.54,
+      "delta": -1.53,
+      "ci95": [
+        -3.9,
+        1.18
+      ],
+      "p_value": 0.867
+    },
+    {
+      "a": "it2-1b-lora",
+      "b": "it2-200m-lora",
+      "metric": "spbleu",
+      "a_score": 51.8,
+      "b_score": 51.36,
+      "delta": -0.44,
+      "ci95": [
+        -2.34,
+        1.49
+      ],
+      "p_value": 0.658
+    },
+    {
+      "a": "it2-1b-lora",
+      "b": "it2-200m-lora",
+      "metric": "chrf",
+      "a_score": 67.43,
+      "b_score": 66.94,
+      "delta": -0.49,
+      "ci95": [
+        -1.83,
+        0.78
+      ],
+      "p_value": 0.765
+    },
+    {
+      "a": "it2-1b-lora",
+      "b": "it2-200m-lora",
+      "metric": "comet",
+      "a_score": 0.8127,
+      "b_score": 0.8115,
+      "delta": -0.0012,
+      "ci95": [
+        -0.0069,
+        0.0048
+      ],
+      "p_value": 0.647
+    }
+  ]
+}

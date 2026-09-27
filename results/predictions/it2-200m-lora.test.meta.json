@@ -1,0 +1,20 @@
+{
+  "system": "it2-200m-lora",
+  "label": "IndicTrans2-dist-200M + LoRA (legal)",
+  "model": "ai4bharat/indictrans2-en-indic-dist-200M",
+  "adapter": "outputs/lora_it2_200m/best",
+  "split": "test",
+  "n": 120,
+  "tokens_in": 4835,
+  "tokens_out": 4757,
+  "seconds": 22.56516135699985,
+  "sents_per_sec": 5.317932280718004,
+  "tokens_out_per_sec": 210.81169882812955,
+  "device": "cuda",
+  "dtype": "float16",
+  "num_beams": 5,
+  "batch_size": 16,
+  "max_length": 256,
+  "torch": "2.11.0+cu128",
+  "transformers": "4.47.1"
+}

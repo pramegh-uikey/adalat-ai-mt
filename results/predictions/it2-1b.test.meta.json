@@ -1,0 +1,20 @@
+{
+  "system": "it2-1b",
+  "label": "IndicTrans2-1B zero-shot",
+  "model": "ai4bharat/indictrans2-en-indic-1B",
+  "adapter": null,
+  "split": "test",
+  "n": 120,
+  "tokens_in": 4835,
+  "tokens_out": 4601,
+  "seconds": 19.585637347000045,
+  "sents_per_sec": 6.126938729332724,
+  "tokens_out_per_sec": 234.91704244716553,
+  "device": "cuda",
+  "dtype": "float16",
+  "num_beams": 5,
+  "batch_size": 16,
+  "max_length": 256,
+  "torch": "2.11.0+cu128",
+  "transformers": "4.47.1"
+}

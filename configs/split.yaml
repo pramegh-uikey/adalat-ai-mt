@@ -1,0 +1,42 @@
+# Document-level split (seed=13, 25 docs with clean Hindi text -> 19/3/3; DECISIONS.md D6/D9).
+# The 5 OCR-recovered docs (6, 14, 22, 25, 26) were appended to train afterwards -> 24/3/3; dev/test keep
+# references from the provided clean text only.
+seed: 13
+ratios:
+  train: 0.76
+  dev: 0.12
+  test: 0.12
+docs:
+  train:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '8'
+  - '12'
+  - '13'
+  - '15'
+  - '16'
+  - '17'
+  - '18'
+  - '19'
+  - '20'
+  - '21'
+  - '23'
+  - '24'
+  - '29'
+  - '30'
+  - '6'
+  - '14'
+  - '22'
+  - '25'
+  - '26'
+  dev:
+  - '7'
+  - '9'
+  - '28'
+  test:
+  - '10'
+  - '11'
+  - '27'

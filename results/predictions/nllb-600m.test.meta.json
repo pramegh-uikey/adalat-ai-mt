@@ -1,0 +1,20 @@
+{
+  "system": "nllb-600m",
+  "label": "NLLB-200-distilled-600M zero-shot",
+  "model": "facebook/nllb-200-distilled-600M",
+  "adapter": null,
+  "split": "test",
+  "n": 120,
+  "tokens_in": 5049,
+  "tokens_out": 4847,
+  "seconds": 17.311147258999995,
+  "sents_per_sec": 6.931949581655398,
+  "tokens_out_per_sec": 279.9929968523643,
+  "device": "cuda",
+  "dtype": "float16",
+  "num_beams": 5,
+  "batch_size": 16,
+  "max_length": 256,
+  "torch": "2.11.0+cu128",
+  "transformers": "4.47.1"
+}

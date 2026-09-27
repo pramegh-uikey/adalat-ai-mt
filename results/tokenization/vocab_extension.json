@@ -1,0 +1,50 @@
+{
+  "base": "tinyllama(llama-2)",
+  "runs": [
+    {
+      "hi_spm_vocab": 2000,
+      "n_added": 1715,
+      "new_vocab_size": 33715,
+      "hi_fertility_train": 1.5719,
+      "hi_fertility_test": 1.615,
+      "en_fertility_test": 1.4952,
+      "hi_fertility_test_base": 5.4482,
+      "en_fertility_test_base": 1.4952,
+      "hi_reduction_test_pct": 70.3582
+    },
+    {
+      "hi_spm_vocab": 4000,
+      "n_added": 3395,
+      "new_vocab_size": 35395,
+      "hi_fertility_train": 1.4191,
+      "hi_fertility_test": 1.4806,
+      "en_fertility_test": 1.4952,
+      "hi_fertility_test_base": 5.4482,
+      "en_fertility_test_base": 1.4952,
+      "hi_reduction_test_pct": 72.8235
+    },
+    {
+      "hi_spm_vocab": 8000,
+      "n_added": 6475,
+      "new_vocab_size": 38475,
+      "hi_fertility_train": 1.3334,
+      "hi_fertility_test": 1.4003,
+      "en_fertility_test": 1.4952,
+      "hi_fertility_test_base": 5.4482,
+      "en_fertility_test_base": 1.4952,
+      "hi_reduction_test_pct": 74.2979
+    },
+    {
+      "hi_spm_vocab": 16000,
+      "n_added": 11895,
+      "new_vocab_size": 43895,
+      "hi_fertility_train": 1.2949,
+      "hi_fertility_test": 1.3471,
+      "en_fertility_test": 1.4952,
+      "hi_fertility_test_base": 5.4482,
+      "en_fertility_test_base": 1.4952,
+      "hi_reduction_test_pct": 75.2743
+    }
+  ],
+  "embedding_init": "mean of old sub-token embeddings (input and lm_head)"
+}

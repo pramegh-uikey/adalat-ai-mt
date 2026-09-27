@@ -1,0 +1,35 @@
+{
+  "base_ident": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "extended_tokenizer": "artifacts/tokenizers/tinyllama-hi8000",
+  "n_sentences": 64,
+  "conditions": {
+    "base": {
+      "total_tokens": 12431,
+      "mean_tokens_per_sentence": 194.234375,
+      "total_nll_nats": 16203.558471679688,
+      "bits_per_char": 2.483986128131616,
+      "perplexity": 3.6820876469960533,
+      "new_token_share": 0.0,
+      "wall_clock_s": 1882.047624898999
+    },
+    "extended_mean_init": {
+      "total_tokens": 3060,
+      "mean_tokens_per_sentence": 47.8125,
+      "total_nll_nats": 26943.808349609375,
+      "bits_per_char": 4.130453585022218,
+      "perplexity": 6668.606038401221,
+      "new_token_share": 0.8016339869281046,
+      "wall_clock_s": 138.56386514599853
+    },
+    "extended_random_init": {
+      "total_tokens": 3060,
+      "mean_tokens_per_sentence": 47.8125,
+      "total_nll_nats": 40170.28173828125,
+      "bits_per_char": 6.158056131647099,
+      "perplexity": 502596.5560127841,
+      "new_token_share": 0.8016339869281046,
+      "wall_clock_s": 149.61482048599555
+    }
+  },
+  "notes": "no training; new rows are untrained apart from initialisation"
+}
