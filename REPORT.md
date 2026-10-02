@@ -8,7 +8,6 @@ and reproducibility notes. The 16 annotated translation examples are in `results
 between `<!-- BEGIN/END -->` markers are generated from `results/` by `make report`; numbers in the prose are copied
 from those files.
 
-*AI assistance was used to complete this assignment.*
 
 ## TL;DR
 
