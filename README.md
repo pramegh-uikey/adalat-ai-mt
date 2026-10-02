@@ -3,7 +3,6 @@
 Tokenizer-efficiency study + LoRA adaptation of IndicTrans2 on a 30-judgment parallel corpus, built for a free Colab T4.
 **Read [`REPORT.md`](REPORT.md) for the write-up**; every number in it is generated from `results/`.
 
-*AI assistance was used to complete this assignment.*
 
 ## Layout
 
