@@ -1,4 +1,4 @@
-# adalat-mt: English → Hindi translation of Indian court judgments
+# adalat-machine-translation: English → Hindi translation of Indian court judgments
 
 Tokenizer-efficiency study + LoRA adaptation of IndicTrans2 on a 30-judgment parallel corpus, built for a free Colab T4.
 **Read [`REPORT.md`](REPORT.md) for the write-up**; every number in it is generated from `results/`.
